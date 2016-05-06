@@ -8,7 +8,9 @@ import scala.scalajs.js
 import scalacss.{Css, Env, Renderer, StyleA}
 import scalacss.mutable.{StyleSheetRegistry, StyleSheet}
 
-
+/**
+ * https://github.com/japgolly/scalacss/blob/master/ext-react/src/main/scala/scalacss/React.scala
+ */
 object SriScalaCssFns {
 
   def createStyleTag(styleStr: String): ReactElement = style(`type` = "text/css")(styleStr)
