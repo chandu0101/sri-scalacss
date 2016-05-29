@@ -4,20 +4,18 @@ enablePlugins(ScalaJSPlugin)
 
 name := "scalacss"
 
-version := "2016.5.0-SNAPSHOT"
+version := "2016.5.0"
 
 organization := "com.github.chandu0101.sri"
 
 scalaVersion := "2.11.8"
 
-val scalatestVersion = "3.0.0-M6"
+val scalatestVersion = "3.0.0-M15"
 
 
-val diodeVersion = "0.4.0"
 
-
-libraryDependencies += "com.github.japgolly.scalacss" %%% "core" % "0.4.0"
-libraryDependencies += "com.github.chandu0101.sri" %%% "web" % "0.5.0-SNAPSHOT"
+libraryDependencies += "com.github.japgolly.scalacss" %%% "core" % "0.4.1"
+libraryDependencies += "com.github.chandu0101.sri" %%% "web" % "0.5.0"
 
 
 relativeSourceMaps := true

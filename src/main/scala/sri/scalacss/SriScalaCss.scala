@@ -52,25 +52,30 @@ object SriScalaCssFns {
   class StyleElementRenderer(s: Renderer[String]) extends Renderer[HTMLStyleElement] {
     override def apply(css: Css) = createStyle(s(css))
   }
+
 }
 
 trait SriScalaCssImplicits {
-    import SriScalaCssFns._
+
+  import SriScalaCssFns._
 
   implicit final def styleaToClassName(s: StyleA): js.UndefOr[String] =
     s.htmlClass
 
-    implicit final def inlineSSReactExt(ss: StyleSheet.Inline) =
-      new InlineSSReactExt(ss)
+  implicit final def styleaToClassName2(s: StyleA): String =
+    s.htmlClass
 
-    implicit final def styleSheetRegistryReactExt(r: StyleSheetRegistry) =
-      new StyleSheetRegistryReactExt(r)
+  implicit final def inlineSSReactExt(ss: StyleSheet.Inline) =
+    new InlineSSReactExt(ss)
 
-    implicit final def cssReactElementRenderer(implicit s: Renderer[String]): Renderer[ReactElement] =
-      new ReactElementRenderer(s)
+  implicit final def styleSheetRegistryReactExt(r: StyleSheetRegistry) =
+    new StyleSheetRegistryReactExt(r)
 
-    implicit final def cssStyleElementRenderer(implicit s: Renderer[String]): Renderer[HTMLStyleElement] =
-      new StyleElementRenderer(s)
+  implicit final def cssReactElementRenderer(implicit s: Renderer[String]): Renderer[ReactElement] =
+    new ReactElementRenderer(s)
+
+  implicit final def cssStyleElementRenderer(implicit s: Renderer[String]): Renderer[HTMLStyleElement] =
+    new StyleElementRenderer(s)
 }
 
 object Defaults extends SriScalaCssImplicits
