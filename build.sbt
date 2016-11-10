@@ -2,20 +2,21 @@
 
 enablePlugins(ScalaJSPlugin)
 
-name := "scalacss"
+name := "sri-scalacss"
 
-version := "2016.5.0"
+version := "2016.11.0"
 
-organization := "com.github.chandu0101.sri"
+organization := "com.github.chandu0101"
 
 scalaVersion := "2.11.8"
 
-val scalatestVersion = "3.0.0-M15"
+val scalatestVersion = "3.0.0"
+
+crossScalaVersions := Seq("2.11.8","2.12.0")
 
 
-
-libraryDependencies += "com.github.japgolly.scalacss" %%% "core" % "0.4.1"
-libraryDependencies += "com.github.chandu0101.sri" %%% "web" % "0.5.0"
+libraryDependencies += "com.github.japgolly.scalacss" %%% "core" % "0.5.0"
+libraryDependencies += "com.github.chandu0101" %%% "sri-web" % "0.6.0"
 
 
 relativeSourceMaps := true
@@ -39,7 +40,7 @@ publishTo := {
 
 pomExtra :=
   <scm>
-    <connection>scm:git:github.com:chandu0101/sri-diode</connection>
+    <connection>scm:git:github.com:chandu0101/sri-scalacss</connection>
     <developerConnection>scm:git:git@github.com:chandu0101/sri-scalacss.git</developerConnection>
     <url>github.com:chandu0101/sri-scalacss.git</url>
   </scm>
