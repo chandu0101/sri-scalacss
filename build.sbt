@@ -4,19 +4,21 @@ enablePlugins(ScalaJSPlugin)
 
 name := "sri-scalacss"
 
-version := "2016.11.0"
+version := "2017.1.0"
 
 organization := "com.github.chandu0101"
 
 scalaVersion := "2.11.8"
+
+//scalaVersion := "2.12.0"
 
 val scalatestVersion = "3.0.0"
 
 crossScalaVersions := Seq("2.11.8","2.12.0")
 
 
-libraryDependencies += "com.github.japgolly.scalacss" %%% "core" % "0.5.0"
-libraryDependencies += "com.github.chandu0101" %%% "sri-web" % "0.6.0"
+libraryDependencies += "com.github.japgolly.scalacss" %%% "core" % "0.5.1"
+libraryDependencies += "com.github.chandu0101" %%% "sri-core" % "0.7.0"
 
 
 relativeSourceMaps := true

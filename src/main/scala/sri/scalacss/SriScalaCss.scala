@@ -1,9 +1,6 @@
 package sri.scalacss
 
-import org.scalajs.dom.raw.HTMLStyleElement
-import org.scalajs.dom.document
-import sri.core.ReactElement
-import sri.web.vdom.htmltags._
+import sri.core.{React, ReactElement}
 
 import scala.scalajs.js
 import scalacss.defaults.PlatformExports
@@ -14,7 +11,7 @@ import scalacss.internal._
  */
 object SriScalaCssFns {
 
-  def createStyleTag(styleStr: String): ReactElement = style(`type` = "text/css")(styleStr)
+  def createStyleTag(styleStr: String): ReactElement = React.createElement("style",js.Dynamic.literal(`type` = "text/css"),styleStr)
 
   class ReactElementRenderer(s: Renderer[String]) extends Renderer[ReactElement] {
     override def apply(css: Css) = createStyleTag(s(css))
